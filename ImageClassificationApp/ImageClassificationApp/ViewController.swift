@@ -9,7 +9,8 @@ import UIKit
 import Vision
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,16 +23,13 @@ class ViewController: UIViewController {
         try? handler.perform([request])
         
         if let observations = request.results {
-          print("Observation :", observations)
+            print("Observation :", observations)
         }
         else {
-            fatalError("No results")
+            print("no result :", request.results)
         }
-        
-
-        
     }
-
-
+    
+    
 }
 
