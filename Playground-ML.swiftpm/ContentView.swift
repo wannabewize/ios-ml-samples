@@ -7,6 +7,7 @@ struct ContentView: View {
     @State private var imageUrl: URL?
     @State private var pickedImage: PhotosPickerItem?
     @State private var pickedImageData: Data!
+    @State var observed: [VNClassificationObservation] = []
     
     var body: some View {
         VStack {
@@ -17,20 +18,39 @@ struct ContentView: View {
                         Task {
                             let data = try? await newValue?.loadTransferable(type: Data.self)
                             pickedImageData = data
+                            let ret = classifyImage(data: pickedImageData)
+                            self.observed = ret ?? []
                         }
                     }
             }
             .frame(height: 44)
             
-            VStack {
-                if pickedImageData != nil,
-                    let image = UIImage(data: pickedImageData) {
-                    Image(uiImage: image)
+            Spacer()
+            ZStack {
+                Group {
+                    if pickedImageData != nil,
+                        let image = UIImage(data: pickedImageData) {
+                        Image(uiImage: image)
+                            .resizable()
+                    }
+                    else {
+                        Image("image1")
+                    }
                 }
-                else {
-                    Image("image1")
+                Group {
+                    VStack {
+                        ForEach(observed, id: \.self ) { item in
+                            Text("\(item.identifier) - \(item.confidence)")
+                        }
+                        
+                    }
+                    .background(.white)
+                    .foregroundColor(.black)
+                    Spacer()
                 }
-            }.frame(height: 300)
+            }
+
+            Spacer()
         }
     }
 }
