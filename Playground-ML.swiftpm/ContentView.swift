@@ -10,24 +10,27 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            PhotosPicker("사진을 고르세요.", selection: $pickedImage)
-                .onChange(of: pickedImage) { newValue in
-                    print("identifier :", newValue)
-                    Task {
-                        let data = try? await newValue?.loadTransferable(type: Data.self)
-                        pickedImageData = data
+            HStack {
+                PhotosPicker("사진을 고르세요.", selection: $pickedImage)
+                    .onChange(of: pickedImage) { newValue in
+                        print("identifier :", newValue)
+                        Task {
+                            let data = try? await newValue?.loadTransferable(type: Data.self)
+                            pickedImageData = data
+                        }
                     }
-                }
-            if pickedImageData != nil,
-                let image = UIImage(data: pickedImageData) {
-                Image(uiImage: image)
             }
-            else {
-                Image("image1")
-            }
-        }
-        .toolbar {
+            .frame(height: 44)
             
+            VStack {
+                if pickedImageData != nil,
+                    let image = UIImage(data: pickedImageData) {
+                    Image(uiImage: image)
+                }
+                else {
+                    Image("image1")
+                }
+            }.frame(height: 300)
         }
     }
 }
