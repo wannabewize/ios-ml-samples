@@ -30,6 +30,7 @@ struct ImageClassificationView: View {
                         }
                     }
             }
+            .padding(20)
             .frame(height: 44)
             
             Spacer()
