@@ -29,7 +29,5 @@ class ViewController: UIViewController {
             print("no result :", request.results)
         }
     }
-    
-    
 }
 
