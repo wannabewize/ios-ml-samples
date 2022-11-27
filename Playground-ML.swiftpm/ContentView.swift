@@ -10,9 +10,9 @@ struct ContentView: View {
                     NavigationLink("Image Classification") {
                         ImageClassificationView()
                     }
-                }
-                NavigationLink("Object Detection") {
-                    ObjectDetectionView()
+                    NavigationLink("Object Detection") {
+                        ObjectDetectionView()
+                    }
                 }
             }
         }

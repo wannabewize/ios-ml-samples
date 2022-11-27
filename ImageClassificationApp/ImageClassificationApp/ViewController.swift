@@ -37,6 +37,7 @@ class ViewController: UIViewController {
             .map { observation in
                 "\(observation.identifier) - \(observation.confidence)"
             }
+            resultView.text = filtered.description
             print("Observation :", filtered)
             
         }

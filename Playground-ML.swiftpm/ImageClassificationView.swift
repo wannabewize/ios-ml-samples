@@ -45,16 +45,21 @@ struct ImageClassificationView: View {
                         Image("image1")
                     }
                 }
-                Group {
-                    VStack {
-                        ForEach(observed, id: \.self ) { item in
-                            Text("\(item.identifier) - \(item.confidence)")
-                        }
-                        
-                    }
-                    .background(.white)
-                    .foregroundColor(.black)
+                
+                HStack(alignment: .top) {
                     Spacer()
+                    VStack(alignment: .trailing) {
+                        VStack {
+                            ForEach(observed, id: \.self ) { item in
+                                Text("\(item.identifier) - \(item.confidence)")
+                                    .font(Font.subheadline)
+                            }
+                        }
+                        .background(.white)
+                        .foregroundColor(.black)
+                        .padding(20)
+                        Spacer()
+                    }
                 }
             }
 
