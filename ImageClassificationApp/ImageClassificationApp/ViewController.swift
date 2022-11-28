@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         
         if let observations : [VNClassificationObservation] = request.results {
             
+            debugPrint("observations count :", observations.count)
+            
             let filtered = observations
             .filter { observation in
                 observation.confidence > 0.5
