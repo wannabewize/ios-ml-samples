@@ -14,6 +14,9 @@
 		2C2F785D293469C900EF39D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2F785C293469C900EF39D1 /* Assets.xcassets */; };
 		2C2F7860293469C900EF39D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2F785E293469C900EF39D1 /* LaunchScreen.storyboard */; };
 		2C2F7892293484F900EF39D1 /* TemeraturePredict.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F7891293484F900EF39D1 /* TemeraturePredict.mlmodel */; };
+		2C2F78952934855A00EF39D1 /* dec_test.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2C2F78942934855A00EF39D1 /* dec_test.csv */; };
+		2C2F78972934856D00EF39D1 /* dec_train.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2C2F78962934856D00EF39D1 /* dec_train.csv */; };
+		2C2F78992934857A00EF39D1 /* origin.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2C2F78982934857A00EF39D1 /* origin.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		2C2F785F293469C900EF39D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C2F7861293469C900EF39D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C2F7891293484F900EF39D1 /* TemeraturePredict.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TemeraturePredict.mlmodel; path = ../../NumberDetect/NumberDetect/TemeraturePredict.mlmodel; sourceTree = "<group>"; };
+		2C2F78942934855A00EF39D1 /* dec_test.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec_test.csv; sourceTree = "<group>"; };
+		2C2F78962934856D00EF39D1 /* dec_train.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec_train.csv; sourceTree = "<group>"; };
+		2C2F78982934857A00EF39D1 /* origin.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = origin.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		2C2F7852293469C800EF39D1 /* TemperaturePredictApp */ = {
 			isa = PBXGroup;
 			children = (
+				2C2F78932934855100EF39D1 /* Resource */,
 				2C2F7891293484F900EF39D1 /* TemeraturePredict.mlmodel */,
 				2C2F7853293469C800EF39D1 /* AppDelegate.swift */,
 				2C2F7855293469C800EF39D1 /* SceneDelegate.swift */,
@@ -68,6 +75,16 @@
 				2C2F7861293469C900EF39D1 /* Info.plist */,
 			);
 			path = TemperaturePredictApp;
+			sourceTree = "<group>";
+		};
+		2C2F78932934855100EF39D1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2C2F78982934857A00EF39D1 /* origin.csv */,
+				2C2F78962934856D00EF39D1 /* dec_train.csv */,
+				2C2F78942934855A00EF39D1 /* dec_test.csv */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +145,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2F78952934855A00EF39D1 /* dec_test.csv in Resources */,
 				2C2F7860293469C900EF39D1 /* LaunchScreen.storyboard in Resources */,
 				2C2F785D293469C900EF39D1 /* Assets.xcassets in Resources */,
 				2C2F785B293469C800EF39D1 /* Main.storyboard in Resources */,
+				2C2F78972934856D00EF39D1 /* dec_train.csv in Resources */,
+				2C2F78992934857A00EF39D1 /* origin.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
